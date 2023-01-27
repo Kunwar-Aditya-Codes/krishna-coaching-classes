@@ -1,0 +1,22 @@
+---
+const { name, marks, grade, subject } = Astro.props;
+---
+
+<div
+  class="p-3 shadow-md hover:scale-105 transition ease-in-out flex-grow min-w-[15rem] shadow-violet-200 flex flex-col items-center space-y-4 mx-4 rounded-md bg-white"
+>
+  <img
+    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+    alt="profile-image"
+  />
+  <div class="flex flex-col items-center space-y-2">
+    <h1
+      class="text-xl font-medium text-white bg-violet-600 px-4 py-1 rounded-md"
+    >
+      {name} - {marks}
+    </h1>
+    <h2 class="font-light text-lg">
+      {grade} - {subject}
+    </h2>
+  </div>
+</div>

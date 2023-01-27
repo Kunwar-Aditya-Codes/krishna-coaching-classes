@@ -1,0 +1,255 @@
+---
+import Layout from "../layouts/layout.astro";
+import Doodle from "/doodle.png";
+import "@fontsource/alegreya-sc";
+import Whatsapp from "/whatsapp.png";
+import Email from "/email.png";
+import ResultCard from "../components/ResultCard.astro";
+import ReviewCard from "../components/ReviewCard.astro";
+
+const result = [
+  {
+    name: "Rahul",
+    grade: "12th",
+    subject: "PCM",
+    marks: "90%",
+  },
+
+  {
+    name: "Jatin",
+    grade: "12th",
+    subject: "PCM",
+    marks: "90%",
+  },
+  {
+    name: "David",
+    grade: "12th",
+    subject: "PCM",
+    marks: "90%",
+  },
+
+  {
+    name: "Jamie",
+    grade: "12th",
+    subject: "PCM",
+    marks: "90%",
+  },
+  {
+    name: "Jake",
+    grade: "12th",
+    subject: "PCM",
+    marks: "90%",
+  },
+
+  {
+    name: "Aditya",
+    grade: "12th",
+    subject: "PCM",
+    marks: "90%",
+  },
+];
+
+const reviews = [
+  {
+    name: "Rahul",
+    review:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+  },
+  {
+    name: "Drake",
+    review:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+  },
+
+  {
+    name: "Doe",
+    review:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+  },
+  {
+    name: "Doe",
+    review:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+  },
+  {
+    name: "Doe",
+    review:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="
+      Krishna Coaching Classes is a one stop solution for all your coaching needs. We provide coaching for all subjects and competitive exams. We have a team of highly qualified teachers who are experts in their respective fields. We have a very good track record of producing excellent results. We have a very good infrastructure and a very friendly environment. 
+    "
+    />
+    <title>Krishna Coaching Classes</title>
+  </head>
+
+  <style>
+    /* width */
+    div::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+
+  <Layout>
+    <!-- Hero -->
+    <section class="text-center h-full">
+      <div class="flex flex-col md:flex-row items-center justify-center h-full">
+        <div class="space-y-6 flex-[0.5] flex flex-col justify-center md:ml-16">
+          <h1
+            style="
+          font-family: 'Alegreya SC', serif;
+          "
+            class="text-3xl md:text-5xl lg:text-7xl md:text-start font-medium mx-auto text-violet-600"
+          >
+            Welcome to Krishna Coaching Classes
+          </h1>
+
+          <p class="font-light md:text-lg text-center md:text-start">
+            The best coaching classes in the city. Let us help you achieve your
+            dreams.
+          </p>
+
+          <button
+            class="mx-auto md:mx-0 md:text-start bg-violet-600 text-white w-fit md:text-2xl px-4 py-2 rounded-md"
+          >
+            <a href="#connect">Connect</a>
+          </button>
+        </div>
+        <div class="flex-[0.5] h-full">
+          <img src={Doodle} alt="doodle" class="w-full h-full mx-auto" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section
+      id="about"
+      class="bg-violet-600 text-white px-2 space-y-2 lg:space-y-8 text-justify"
+    >
+      <div class="max-w-7xl mx-auto py-6 md:py-12">
+        <h2
+          style="
+      font-family: 'Alegreya SC', serif;
+      "
+          class="text-center text-2xl md:text-3xl lg:text-4xl font-medium uppercase"
+        >
+          About
+        </h2>
+
+        <p class="px-2 font-light max-w-6xl mx-auto md:text-lg lg:text-xl mt-6">
+          This is a coaching class for students of class 6th to 12th. We provide
+          coaching for all subjects. We also provide coaching for competitive
+          exams.
+
+          <br />
+
+          We have a team of highly qualified teachers who are experts in their
+          respective fields. We have a very good track record of producing
+          excellent results. We have a very good infrastructure and a very
+          friendly environment. We have a very good library with a wide range of
+          books. We have a very good study material. We have a very good
+          infrastructure and a very friendly environment. We have a very good
+          library with a wide range of books. We have a very good study
+          material. We have a very good infrastructure and a very friendly
+          environment. We have a very good library with a wide range of books.
+          We have a very good study material. We have a very good infrastructure
+          and a very friendly environment. We have a very good library with a
+          wide range of books.
+        </p>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="py-6 md:py-12 max-w-7xl mx-auto">
+      <h2
+        style="
+          font-family: 'Alegreya SC', serif;
+          "
+        class="text-center text-violet-600 text-2xl md:text-3xl lg:text-4xl font-medium uppercase"
+      >
+        Results
+      </h2>
+
+      <div
+        class="flex items-center py-2 mt-6 overflow-x-scroll border-b-4 border-violet-600"
+      >
+        {
+          result.map((item) => {
+            return (
+              <ResultCard
+                name={item.name}
+                grade={item.grade}
+                subject={item.subject}
+                marks={item.marks}
+              />
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="bg-violet-600 py-6 md:py-12">
+      <div class="max-w-7xl mx-auto">
+        <h2
+          style="
+        font-family: 'Alegreya SC', serif;
+        "
+          class="text-center text-white text-2xl md:text-3xl lg:text-4xl font-medium uppercase"
+        >
+          Reviews
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4">
+          {
+            reviews.map((item) => {
+              return <ReviewCard name={item.name} review={item.review} />;
+            })
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect -->
+    <section id="connect" class="py-6 md:py-12 max-w-7xl mx-auto">
+      <h2
+        style="
+        font-family: 'Alegreya SC', serif;
+        "
+        class="text-center text-violet-600 text-2xl md:text-3xl lg:text-4xl font-medium uppercase"
+      >
+        Connect <span class="text-base font-light">via</span>
+      </h2>
+
+      <div
+        class="flex flex-col items-center space-y-4 mt-6 md:text-2xl text-lg"
+      >
+        <button
+          class="flex items-center space-x-3 bg-green-600 px-6 py-2 rounded-md shadow-md"
+        >
+          <img src={Whatsapp} alt="" class="w-8 h-8" />
+          <h1 class="text-white">Whatsapp</h1>
+        </button>
+        <button
+          class="flex items-center space-x-3 bg-violet-600 px-6 py-2 rounded-md shadow-md"
+        >
+          <img src={Email} alt="" class="w-8 h-8" />
+          <h1 class="text-white">Email</h1>
+        </button>
+      </div>
+    </section>
+  </Layout>
+
+
+</html>
